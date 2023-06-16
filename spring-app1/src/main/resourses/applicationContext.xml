@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <bean id="rapMusicBean"
+          class="org.example.RapMusic">
+    </bean>
+
+    <bean id="classicalMusicBean"
+          class="org.example.ClassicalMusic">
+    </bean>
+
+    <bean id="rockMusicBean"
+          class="org.example.RockMusic">
+    </bean>
+
+    <!-- use methods -->
+    <bean id="musicBean"
+          class="org.example.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
+       <!-- become one object because  scope="singleton" -->
+    </bean>
+
+    <!-- DI with scope=prototype -->
+    <bean id="musicPlayer"
+          class="org.example.MusicPlayer"
+          scope="prototype">
+        <!-- DI with constructor
+        <constructor-arg ref="musicBean"/> -->
+
+        <!-- DI with setter (used links)
+        <property name="music" ref="musicBean"/>
+
+        <property name="name" value="Some name"/>
+        <property name="volume" value="70"/>  -->
+
+        <!-- DI with external file (musicPlayer.properties)
+        <property name="music" ref="musicBean"/>
+
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/> -->
+    </bean>
+
+    <bean id="musicPlayerList"
+          class="org.example.MusicPlayerList">
+        <property name="musicList">
+            <list>
+                <ref bean="classicalMusicBean"/>
+                <ref bean="rapMusicBean"/>
+                <ref bean="rockMusicBean"/>
+            </list>
+        </property>
+    </bean>
+
+
+  </beans>
