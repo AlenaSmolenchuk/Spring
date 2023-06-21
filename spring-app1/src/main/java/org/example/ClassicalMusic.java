@@ -17,6 +17,7 @@ public class ClassicalMusic implements Music {
     public void doMyDestroy() {
         System.out.println("Doing my distraction!");
     }
+    
     @Override
     public String getSong() {
         return "Hungarian Rhapsody";
