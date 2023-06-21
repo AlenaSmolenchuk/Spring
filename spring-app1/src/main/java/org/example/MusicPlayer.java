@@ -1,6 +1,7 @@
 package org.example;
 
 public class MusicPlayer {
+   
     private Music music;
     private String name;
     private int volume;
@@ -23,7 +24,7 @@ public class MusicPlayer {
 
     public MusicPlayer() {}
 
-   public MusicPlayer(Music music){
+    public MusicPlayer(Music music){
         this.music = music;
     }
 
