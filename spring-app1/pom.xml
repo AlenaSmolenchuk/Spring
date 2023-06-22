@@ -39,8 +39,9 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
-  <build>
+</dependencies>
+  
+<build>
     <finalName>spring-app1</finalName>
   </build>
 </project>
