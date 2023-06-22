@@ -43,5 +43,5 @@
   
 <build>
     <finalName>spring-app1</finalName>
-  </build>
+</build>
 </project>
