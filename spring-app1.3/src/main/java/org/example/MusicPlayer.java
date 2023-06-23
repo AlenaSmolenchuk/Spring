@@ -1,6 +1,7 @@
 package org.example;
 
 public class MusicPlayer {
+   
     private ClassicalMusic classicalMusic;
     private RockMusic rockMusic;
 
