@@ -6,4 +6,5 @@ public class RockMusic implements Music {
     public String getSong() {
         return "Wild cries Mary";
     }
+    
 }
