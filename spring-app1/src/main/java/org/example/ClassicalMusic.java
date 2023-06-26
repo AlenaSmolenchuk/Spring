@@ -7,7 +7,7 @@ public class ClassicalMusic implements Music {
     public static ClassicalMusic getClassicalMusic() {
         return new ClassicalMusic();
     }
- 
+  
     // there (doMyInit and doMyDestroy) can be any access modifier and
     // methods should not take any values
     public void doMyInit() {
