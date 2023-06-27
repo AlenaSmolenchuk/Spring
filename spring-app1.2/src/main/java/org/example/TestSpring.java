@@ -8,7 +8,6 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-
       /* independently implementing the dependency
 
         Music music = context.getBean("rockMusic", Music.class);
