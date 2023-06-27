@@ -40,7 +40,6 @@ public class TestSpring {
         musicPlayer.playMusic(Genre.ROCK);
         musicPlayer.playMusic(Genre.RAP);
          */
-
         MusicPlayer musicPlayer = context.getBean("musikPlayer", MusicPlayer.class);
 
         System.out.println(musicPlayer.getVolume());
