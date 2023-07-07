@@ -1,9 +1,16 @@
-package org.example;
+package org.example.config;
 
+import org.example.Music;
+import org.example.MusicPlayer;
+import org.example.genre.ClassicalMusic;
+import org.example.genre.RapMusic;
+import org.example.genre.RockMusic;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 // @Configuration annotation configure ".xml"-file
@@ -22,8 +29,18 @@ public class SpringConfig {
     }
 
     @Bean
+    public RapMusic rapMusic() {
+        return new RapMusic();
+    }
+
+    @Bean
+    public List<Music> musicList() {
+        return Arrays.asList(classicalMusic(),rockMusic(),rapMusic());
+    }
+
+    @Bean
     public MusicPlayer musicPlayer() {
-        return new MusicPlayer(classicalMusic(),rockMusic());
+        return new MusicPlayer(musicList());
     }
 
 
