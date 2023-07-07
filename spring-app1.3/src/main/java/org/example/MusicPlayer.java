@@ -1,18 +1,36 @@
 package org.example;
 
-public class MusicPlayer {
-   
-    private ClassicalMusic classicalMusic;
-    private RockMusic rockMusic;
+import org.springframework.beans.factory.annotation.Value;
 
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
+import java.util.List;
+import java.util.Random;
+
+public class MusicPlayer {
+
+    @Value("${musicPlayer.name}")
+    private String name;
+
+    @Value("${musicPlayer.volume}")
+    private int volume;
+    private List<Music> musicList;
+
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
-    public void playMusic() {
-        System.out.println(classicalMusic.getSong());
-        System.out.println(rockMusic.getSong());
+    public String getName() {
+        return name;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public String playMusic() {
+        Random rand = new Random();
+
+        return "Playing: " + musicList.get(rand.nextInt(musicList.size())).getSong()
+        + "with volume " + this.volume;
     }
 }
 
