@@ -12,6 +12,7 @@ public class MusicPlayer {
 
     @Value("${musicPlayer.volume}")
     private int volume;
+
     private List<Music> musicList;
 
     public MusicPlayer(List<Music> musicList) {
