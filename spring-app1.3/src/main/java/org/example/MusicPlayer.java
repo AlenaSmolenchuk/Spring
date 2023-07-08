@@ -27,7 +27,7 @@ public class MusicPlayer {
         return volume;
     }
 
-    public String playMusic() {
+    public String playMusic() { 
         Random rand = new Random();
 
         return "Playing: " + musicList.get(rand.nextInt(musicList.size())).getSong()
