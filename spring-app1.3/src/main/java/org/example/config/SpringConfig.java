@@ -43,5 +43,4 @@ public class SpringConfig {
         return new MusicPlayer(musicList());
     }
 
-
 }
