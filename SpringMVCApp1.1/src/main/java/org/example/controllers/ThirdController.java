@@ -17,6 +17,7 @@ public class ThirdController {
                             @RequestParam(value = "b",required = false) int b,
                             @RequestParam(value = "action",required = false) String action,
                             Model model) {
+
         if (Objects.equals(action, "multiplication")){
             model.addAttribute("action", a * b);
         } else if (Objects.equals(action, "addition")) {
