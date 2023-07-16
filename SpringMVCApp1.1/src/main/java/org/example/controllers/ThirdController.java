@@ -25,6 +25,7 @@ public class ThirdController {
         } else if (Objects.equals(action, "addition")) {
 
             model.addAttribute("action", a + b);
+
         } else if (Objects.equals(action, "subtraction")) {
             model.addAttribute("action", a - b);
         } else if (Objects.equals(action, "division")) {
