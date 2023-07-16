@@ -31,11 +31,14 @@ public class ThirdController {
             model.addAttribute("action", a - b);
 
         } else if (Objects.equals(action, "division")) {
-            model.addAttribute("action", a / (double) b);
-        } else {
-            model.addAttribute("action", "Something is wrong");
-        }
 
+            model.addAttribute("action", a / (double) b);
+
+        } else {
+
+            model.addAttribute("action", "Something is wrong");
+
+        }
         return "third/calculator";
     }
 }
