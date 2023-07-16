@@ -19,6 +19,7 @@ public class ThirdController {
                             Model model) {
 
         if (Objects.equals(action, "multiplication")){
+
             model.addAttribute("action", a * b);
         } else if (Objects.equals(action, "addition")) {
             model.addAttribute("action", a + b);
