@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>New person</title>
 </head>
+    
 <body>
 
 <form th:method="POST" th:action="@{/people}" th:object="${person}">
@@ -17,4 +19,5 @@
 </form>
 
 </body>
+
 </html>
