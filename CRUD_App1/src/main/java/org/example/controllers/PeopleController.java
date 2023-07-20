@@ -35,9 +35,7 @@ public class PeopleController {
 
     @GetMapping("new")
     public String newPerson(Model model) {
-
         model.addAttribute("person", new Person());
-
         return "people/new";
     }
 
