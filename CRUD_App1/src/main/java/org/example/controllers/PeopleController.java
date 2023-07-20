@@ -46,6 +46,7 @@ public class PeopleController {
             return "people/new";
 
         personDAO.save(person);
+
         return "redirect:/people";
     }
 
@@ -54,7 +55,6 @@ public class PeopleController {
                        @PathVariable("id") int id) {
 
         model.addAttribute("person", personDAO.show(id));
-
         return "people/edit";
     }
 
