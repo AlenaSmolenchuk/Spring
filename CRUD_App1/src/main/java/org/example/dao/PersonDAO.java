@@ -10,11 +10,14 @@ import java.util.List;
 public class PersonDAO {
 
     private static int PEOPLE_COUNT;
+    // to use db
     private static final String URL = "jdbc:mysql://localhost:3306/first_db";
     private static final String USERNAME = "user";
     private static final String PASSWORD = "password";
 
     private static Connection connection;
+    
+    // to use ArrayList
     // private List<Person> people;
 
      static {
@@ -43,6 +46,7 @@ public class PersonDAO {
 
     public List<Person> index() {
         List<Person> people = new ArrayList<>();
+        
         try {
             Statement statement = connection.createStatement();
             String SQL = "SELECT * FROM person";
@@ -61,6 +65,7 @@ public class PersonDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        
         return people;
     }
 
