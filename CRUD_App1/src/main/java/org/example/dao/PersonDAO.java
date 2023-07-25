@@ -10,19 +10,57 @@ import java.util.List;
 public class PersonDAO {
 
     private static int PEOPLE_COUNT;
-    private List<Person> people;
+    private static final String URL = "jdbc:mysql://localhost:3306/first_db";
+    private static final String USERNAME = "user";
+    private static final String PASSWORD = "password";
 
-    {
-        people = new ArrayList<>();
+    private static Connection connection;
+    // private List<Person> people;
 
-        people.add(new Person(++PEOPLE_COUNT, "Non", 24 , "non@gmail.com"));
-        people.add(new Person(++PEOPLE_COUNT,"Tom", 52, "tom@gmail.com"));
-        people.add(new Person(++PEOPLE_COUNT,"Bob", 36, "bob@gmail.com"));
-        people.add(new Person(++PEOPLE_COUNT,"Mike", 18, "mikey@gmail.com"));
+     static {
+        try {
+            Class.forName("org.mysql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
+        try {
+            connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
+    
+    // {
+    //     people = new ArrayList<>();
+
+    //     people.add(new Person(++PEOPLE_COUNT, "Non", 24 , "non@gmail.com"));
+    //     people.add(new Person(++PEOPLE_COUNT,"Tom", 52, "tom@gmail.com"));
+    //     people.add(new Person(++PEOPLE_COUNT,"Bob", 36, "bob@gmail.com"));
+    //     people.add(new Person(++PEOPLE_COUNT,"Mike", 18, "mikey@gmail.com"));
+
+    // }
 
     public List<Person> index() {
+        List<Person> people = new ArrayList<>();
+        try {
+            Statement statement = connection.createStatement();
+            String SQL = "SELECT * FROM person";
+            ResultSet resultSet = statement.executeQuery(SQL);
+            
+            while(resultSet.next()) {
+                Person person = new Person();
+
+                person.setId(resultSet.getInt("id"));
+                person.setName(resultSet.getString("name"));
+                person.setAge(resultSet.getInt("age"));
+                person.setEmail(resultSet.getString("email"));
+
+                people.add(person);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return people;
     }
 
