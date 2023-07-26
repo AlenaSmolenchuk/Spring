@@ -114,6 +114,15 @@ public class PersonDAO {
     }
 
     public void delete(int id) {
-        people.removeIf(p -> p.getId() == id);
+        try {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("DELETE FROM person WHERE id=?");
+
+            preparedStatement.setInt(1, id);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
