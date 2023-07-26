@@ -29,16 +29,6 @@ public class PersonDAO {
         }
     }
     
-    // {
-    //     people = new ArrayList<>();
-
-    //     people.add(new Person(++PEOPLE_COUNT, "Non", 24 , "non@gmail.com"));
-    //     people.add(new Person(++PEOPLE_COUNT,"Tom", 52, "tom@gmail.com"));
-    //     people.add(new Person(++PEOPLE_COUNT,"Bob", 36, "bob@gmail.com"));
-    //     people.add(new Person(++PEOPLE_COUNT,"Mike", 18, "mikey@gmail.com"));
-
-    // }
-
     public List<Person> index() {
         List<Person> people = new ArrayList<>();
         
