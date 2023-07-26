@@ -9,17 +9,12 @@ import java.util.List;
 @Component
 public class PersonDAO {
 
-    private static int PEOPLE_COUNT;
-    // to use db
     private static final String URL = "jdbc:mysql://localhost:3306/first_db";
     private static final String USERNAME = "user";
     private static final String PASSWORD = "password";
 
     private static Connection connection;
     
-    // to use ArrayList
-    // private List<Person> people;
-
      static {
         try {
             Class.forName("org.mysql.Driver");
