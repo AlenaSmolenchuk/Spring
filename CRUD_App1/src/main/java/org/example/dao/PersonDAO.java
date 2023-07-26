@@ -97,12 +97,20 @@ public class PersonDAO {
     }
 
     public void update(int id, Person updatedPerson) {
+        try {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("UPDATE person SET name=?, age=?, email=? WHERE id=?");
 
-        Person personToBeUpdated = show(id);
+            preparedStatement.setString(1, updatedPerson.getName());
+            preparedStatement.setInt(2, updatedPerson.getAge());
+            preparedStatement.setString(3, updatedPerson.getEmail());
 
-        personToBeUpdated.setName(updatedPerson.getName());
-        personToBeUpdated.setAge(updatedPerson.getAge());
-        personToBeUpdated.setEmail(updatedPerson.getEmail());
+            preparedStatement.setInt(4, id);
+
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void delete(int id) {
