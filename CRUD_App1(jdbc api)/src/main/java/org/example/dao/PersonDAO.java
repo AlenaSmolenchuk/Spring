@@ -17,7 +17,7 @@ public class PersonDAO {
 
     static {
         try {
-            Class.forName("com.mysql.Driver");
+            Class.forName("com.mysql.jdbcDriver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
