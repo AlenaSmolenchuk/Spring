@@ -29,6 +29,7 @@ public class PersonDAO {
             e.printStackTrace();
         }
     }
+
     public List<Person> index() {
         List<Person> people = new ArrayList<>();
         try {
