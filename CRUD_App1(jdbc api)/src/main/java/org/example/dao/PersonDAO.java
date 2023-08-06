@@ -9,6 +9,7 @@ import java.util.List;
 
 @Component
 public class PersonDAO {
+
     private static final String URL = "jdbc:mysql://localhost:3306/first_db";
     private static final String USERNAME = "user";
     private static final String PASSWORD = "password";
