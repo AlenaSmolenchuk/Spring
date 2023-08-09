@@ -12,7 +12,7 @@ import org.springframework.validation.Validator;
 public class PersonValidator implements Validator {
 
     private final PersonDAO personDAO;
-
+ 
     @Autowired
     public PersonValidator(PersonDAO personDAO) {
         this.personDAO = personDAO;
