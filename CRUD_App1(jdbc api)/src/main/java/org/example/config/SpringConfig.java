@@ -13,7 +13,6 @@ import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 
 
-
 @Configuration
 @ComponentScan("org.example")
 @EnableWebMvc
