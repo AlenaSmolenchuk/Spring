@@ -16,7 +16,6 @@
   <name>SpringMVCApp1 Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
-
   <dependencies>
 
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
