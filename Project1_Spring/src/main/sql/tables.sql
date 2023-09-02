@@ -1,8 +1,10 @@
+
 create table person (
                         id integer AUTO_INCREMENT PRIMARY KEY,
                         full_name varchar(124) UNIQUE,
                         birthday_year integer NOT NULL
 );
+
 
 create table book (
                       id integer AUTO_INCREMENT PRIMARY KEY,
