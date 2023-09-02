@@ -1,15 +1,15 @@
 
 create table person (
-                        id integer AUTO_INCREMENT PRIMARY KEY,
+                        id INTEGER AUTO_INCREMENT PRIMARY KEY,
                         full_name varchar(124) UNIQUE,
-                        birthday_year integer NOT NULL
+                        birthday_year INTEGER NOT NULL
 );
 
 
 create table book (
                       id integer AUTO_INCREMENT PRIMARY KEY,
-                      person_id integer REFERENCES person(id) ON DELETE SET NULL,
+                      person_id INTEGER REFERENCES person(id) ON DELETE SET NULL,
                       title varchar(100) NOT NULL,
                       author varchar(100) NOT NULL,
-                      year integer NOT NULL
+                      year INTEGER NOT NULL
 );
