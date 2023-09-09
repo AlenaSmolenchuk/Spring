@@ -1,7 +1,7 @@
 package org.example.model;
 
 import javax.persistence.Column;
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
