@@ -2,7 +2,7 @@ package org.example.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
