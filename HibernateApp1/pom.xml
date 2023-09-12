@@ -32,7 +32,7 @@
       <artifactId>postgresql</artifactId>
       <version>42.4.3</version>
     </dependency>
-
+ 
     <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
     <dependency>
       <groupId>org.hibernate.orm</groupId>
