@@ -25,6 +25,8 @@ public class App {
                 System.out.println(person);
             }
 
+            session.getTransaction().commit();
+            
         } finally {
             sessionFactory.close();
         }
