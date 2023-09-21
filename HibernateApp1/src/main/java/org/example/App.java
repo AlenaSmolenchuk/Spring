@@ -10,7 +10,8 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        Configuration configuration = new Configuration().addAnnotatedClass(Person.class);
+        Configuration configuration = new Configuration().addAnnotatedClass(Person.class)
+            .addAnnotatedClass(Item.class);
 
         SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.getCurrentSession();
@@ -18,12 +19,7 @@ public class App {
         try {
             session.beginTransaction();
 
-            session.createQuery("delete from Person where age < 30").executeUpdate();
-            List<Person> people = session.createQuery("from Person ").getResultList();
-
-            for (Person person : people) {
-                System.out.println(person);
-            }
+           
 
             session.getTransaction().commit();
             
