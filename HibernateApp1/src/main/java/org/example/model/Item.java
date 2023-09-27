@@ -18,7 +18,6 @@ public class Item {
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person owner;
 
-    public Item() {}
 
     public Item(String itemName) {
         this.itemName = itemName;
@@ -50,7 +49,9 @@ public class Item {
 
     @Override
     public String toString() {
-        return "id=" + id +
-               ", itemName= " + itemName; 
+        return "Item{" +
+                "id=" + id +
+                ", itemName='" + itemName + '\'' +
+                '}';
     }
 }
