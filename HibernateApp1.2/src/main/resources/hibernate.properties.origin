@@ -1,4 +1,3 @@
-
 hibernate.driver_class = 
 hibernate.connection.url = 
 hibernate.connection.username = 
