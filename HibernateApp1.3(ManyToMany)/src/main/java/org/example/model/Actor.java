@@ -3,7 +3,7 @@ package org.example.model;
 import jakarta.persistence.*;
 
 import java.util.List;
-import java.util.Objects;
+import java.util.Objects; 
 
 @Entity
 @Table(name = "Actor")
