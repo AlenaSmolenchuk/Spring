@@ -71,7 +71,7 @@ public class SpringConfig implements WebMvcConfigurer {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setDriverClassName(environment.getProperty("hibernate.driver_class"));
-        dataSource.setUrl(environment.getProperty("hibernate.connection.url "));
+        dataSource.setUrl(environment.getProperty("hibernate.connection.url"));
         dataSource.setUsername(environment.getProperty("hibernate.connection.username"));
         dataSource.setPassword(environment.getProperty("hibernate.connection.password"));
 
