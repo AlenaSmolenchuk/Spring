@@ -38,7 +38,7 @@
     <groupId>org.springframework</groupId>
     <artifactId>spring-beans</artifactId>
     <version>${spring-version}</version>
-  </dependency>
+  </dependency> 
 
   <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
   <dependency>
