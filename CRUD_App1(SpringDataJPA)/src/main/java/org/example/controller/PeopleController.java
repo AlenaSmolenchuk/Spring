@@ -2,6 +2,7 @@ package org.example.controller;
 
 import jakarta.validation.Valid;
 import org.example.model.Person;
+import org.example.services.ItemsService;
 import org.example.services.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,17 +15,23 @@ import org.springframework.web.bind.annotation.*;
 public class PeopleController {
 
     private final PeopleService peopleService;
-
+    private final ItemsService itemsService;
 
     @Autowired
-    public PeopleController(PeopleService peopleService) {
+    public PeopleController(PeopleService peopleService, ItemsService itemsService) {
         this.peopleService = peopleService;
+        this.itemsService = itemsService;
     }
 
     @GetMapping
     public String index(Model model) {
 
         model.addAttribute("people", peopleService.findAll());
+
+        itemsService.findByItemName("airpods");
+        itemsService.findByOwner(peopleService.findAll().get(0));
+
+        peopleService.test();
 
         return "people/index";
     }
@@ -88,4 +95,6 @@ public class PeopleController {
 
         return "redirect:/people";
     }
+
+
 }
